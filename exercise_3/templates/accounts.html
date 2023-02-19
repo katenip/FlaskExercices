@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+        <style>
+             
+          h1{
+            margin-left: 100px;
+          }
+          p{
+            margin-left: 100px;
+          }
+          nav{
+            margin-left: 82px;
+          }
+          #error{
+            color: red;
+          }
+          .table{
+            margin-left: 100px;
+            
+          }
+       
+        </style>
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        {% endblock %}
+    </head>
+    <nav class="navbar navbar-expand-sm bg-light">
+
+        <div class="container-fluid">
+          <!-- Links -->
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="accounts">Accounts</a>
+            </li>
+          </ul>
+        </div>
+    </nav>
+    <body>
+       
+    
+
+      
+        <!-- Your page content -->
+        {% block content %}
+        <br><h1>Registered Students</h1><br>
+        <br><table class="table table-light" data-url="data.json">
+            <thead>
+              <tr>
+                <th data-field="name">Name</th>
+                <th data-field="org">Orginization</th>
+              </tr>
+            </thead>
+            {% for users in persons %}
+            <tr>
+              <td>{{ users[0] }}</td>
+              <td>{{ users[1] }}</td>
+            </tr>
+          {% endfor %}  
+        </table>
+    
+        {% endblock %}
+
+    
+    </body>
+    
+</html>

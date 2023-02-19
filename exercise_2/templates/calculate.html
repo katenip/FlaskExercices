@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+        <style>
+        p{
+            color:gray;
+            
+            font-size: large;
+            text-align: center;
+        }
+        h1{
+        font-weight: bold;
+        text-align: center;
+        }
+       
+        </style>
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Your page content -->
+        {% block content %}
+        <h1>Calculate</h1>
+        <p>{{answervar}}</p>
+        <a href="/">Go Home</a>
+        {% endblock %}
+
+    </body>
+</html>

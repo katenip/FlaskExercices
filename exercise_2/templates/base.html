@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        {% block head %}
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+        <style>
+       h1{
+        font-weight: bold;
+        text-align: center;   
+    }
+      p{
+        text-align: center;
+      }
+      form{
+        text-align: left;
+      }
+        </style>
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+        {% endblock %}
+
+        {% endblock %}
+    </head>
+    
+    <body>
+        <!-- Your page content -->
+        {% block content %}
+        <h1>Home</h1>
+        <p>Enter an integer to find out if it is even or odd</p>
+        <form action="calculate" method="get">
+        <label for="fnum">Number<br></label>
+        <input type="text" id="fnum" name="number"><br><br>
+        <input type="submit" value="Submit">
+        </form>
+        {% endblock %}
+
+    </body>
+</html>
